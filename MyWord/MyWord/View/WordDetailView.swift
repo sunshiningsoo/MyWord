@@ -28,15 +28,24 @@ struct WordDetailView: View {
             .padding()
             Divider()
                 .background(.orange)
+                .padding()
+            HStack {
+                Text("예시 문장")
+                    .font(.title2)
+                Spacer()
+            }.padding()
             
-            if word.example != "" {
+            if word.example == "" {
                 HStack {
-                    Text("예시 문장")
-                        .font(.title2)
+                    Text("예시 문장이 없습니다. \n예시 문장을 만들어 보세요!")
+                        .font(.body)
+                        .foregroundColor(Color(.lightGray))
                     Spacer()
-                }.padding()
+                }
+                .padding()
+            } else {
                 HStack {
-                    Text(word.example ?? "")
+                    Text(word.example)
                         .font(.headline)
                     Spacer()
                 }

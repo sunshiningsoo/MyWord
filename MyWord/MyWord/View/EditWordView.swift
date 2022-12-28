@@ -11,11 +11,6 @@ struct EditWordView: View {
     @EnvironmentObject var viewModel: WordViewModel
     @Environment(\.dismiss) var dismiss
     @Binding var word: Word
-    @State var example: String = "" {
-        didSet {
-            word = Word(alphabet: word.alphabet, meaning: word.meaning, example: example)
-        }
-    }
     
     enum Size {
         static let screenWidth = UIScreen.main.bounds.width
@@ -53,7 +48,7 @@ struct EditWordView: View {
                     Text("예시 문장(선택)")
                     Spacer()
                 }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
-                TextField("예시 문장", text: $example)
+                TextField("예시 문장", text: $word.example)
                     .padding()
                     .frame(width: Size.screenWidth - Size.padding * 2, height: 50)
                     .background(Color(.systemGray5))
@@ -62,7 +57,7 @@ struct EditWordView: View {
             
             Button {
                 Task {
-                    await viewModel.editWord(word: Word(id: word.id, alphabet: word.alphabet, meaning: word.meaning, example: example))
+                    await viewModel.editWord(word: Word(id: word.id, alphabet: word.alphabet, meaning: word.meaning, example: word.example))
                     dismiss()
                 }
             } label: {

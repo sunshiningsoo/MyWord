@@ -11,6 +11,6 @@ struct Word: Identifiable, Codable {
     var id: UUID = UUID()
     var alphabet: String
     var meaning: String
-    var example: String?
+    var example: String
     
 }

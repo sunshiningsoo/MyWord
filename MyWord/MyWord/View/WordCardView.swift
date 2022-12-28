@@ -29,11 +29,12 @@ struct WordCardView: View {
         .background(Color(.systemOrange))
         .cornerRadius(20)
         .padding()
+        .shadow(radius: 3)
     }
 }
 
 struct WordCardView_Previews: PreviewProvider {
     static var previews: some View {
-        WordCardView(word: Word(alphabet: "Hello", meaning: "안녕"))
+        WordCardView(word: Word(alphabet: "Hello", meaning: "안녕", example: "EXAMPLE"))
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddWordView: View {
     @EnvironmentObject var viewModel: WordViewModel
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     @State private var word: String = ""
     @State private var meaning: String = ""
     @State private var example: String = ""
@@ -60,7 +60,7 @@ struct AddWordView: View {
             Button {
                 Task {
                     await viewModel.addWord(word: Word(alphabet: word, meaning: meaning, example: example))
-                    self.presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 }
             } label: {
                 Text("저장하기")
@@ -68,6 +68,7 @@ struct AddWordView: View {
                     .background(Color(.systemOrange))
                     .foregroundColor(.white)
                     .cornerRadius(10)
+                    .padding()
             }
             Spacer()
         }
