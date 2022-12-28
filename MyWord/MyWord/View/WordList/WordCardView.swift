@@ -15,18 +15,16 @@ struct WordCardView: View {
             Rectangle()
                 .frame(width: UIScreen.main.bounds.width - 40, height: 100)
                 .foregroundColor(Color(.systemOrange))
-                .opacity(0.8)
                 .cornerRadius(20)
                 .shadow(radius: 3)
             HStack {
                 Text(word.alphabet)
                     .font(.title)
-                    .foregroundColor(.black)
-                    .bold()
+                    .accentColor(Color(.systemBackground))
                 Spacer()
                 Text(meaningShow ? word.meaning : "클릭")
                     .font(.title3)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(.systemBackground))
                     .onTapGesture {
                         meaningShow.toggle()
                     }
