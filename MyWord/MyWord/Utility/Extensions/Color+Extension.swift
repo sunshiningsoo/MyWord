@@ -16,3 +16,9 @@ extension Color {
     }
     
 }
+
+extension CGFloat {
+    func screenWidth() -> CGFloat {
+        return UIScreen.main.bounds.width
+    }
+}

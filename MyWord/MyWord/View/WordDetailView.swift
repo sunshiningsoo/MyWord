@@ -16,63 +16,65 @@ struct WordDetailView: View {
     @State var word: Word
     
     var body: some View {
-        VStack (spacing: 30) {
-            HStack {
-                Text(word.alphabet)
-                    .font(.largeTitle)
-                    .bold()
-                Spacer()
-                Text(word.meaning)
-                    .font(.body)
-            }
-            .padding()
-            Divider()
-                .background(.orange)
-                .padding()
-            HStack {
-                Text("예시 문장")
-                    .font(.title2)
-                Spacer()
-            }.padding()
-            
-            if word.example == "" {
+        ScrollView {
+            VStack (spacing: 30) {
                 HStack {
-                    Text("예시 문장이 없습니다. \n예시 문장을 만들어 보세요!")
+                    Text(word.alphabet)
+                        .font(.largeTitle)
+                        .bold()
+                    Spacer()
+                    Text(word.meaning)
                         .font(.body)
-                        .foregroundColor(Color(.lightGray))
-                    Spacer()
                 }
                 .padding()
-            } else {
+                Divider()
+                    .background(.orange)
+                    .padding()
                 HStack {
-                    Text(word.example)
-                        .font(.headline)
+                    Text("예시 문장")
+                        .font(.title2)
                     Spacer()
+                }.padding()
+                
+                if word.example == "" {
+                    HStack {
+                        Text("예시 문장이 없습니다. \n예시 문장을 만들어 보세요!")
+                            .font(.body)
+                            .foregroundColor(Color(.lightGray))
+                        Spacer()
+                    }
+                    .padding()
+                } else {
+                    HStack {
+                        Text(word.example)
+                            .font(.headline)
+                        Spacer()
+                    }
+                    .padding()
                 }
-                .padding()
+                Spacer()
             }
-            Spacer()
+            .toolbar {
+                Image(systemName: "trash")
+                    .onTapGesture {
+                        alertAction.toggle()
+                    }
+                    .alert(isPresented: $alertAction, content: {
+                        Alert(title: Text("\(word.alphabet)를 삭제하시겠습니까?"), primaryButton: .cancel(Text("취소")), secondaryButton: .destructive(Text("삭제"), action: {
+                            Task {
+                                await viewModel.removeWord(word: word)
+                                dismiss()
+                            }
+                        }))
+                    })
+                Image(systemName: "square.and.pencil")
+                    .onTapGesture {
+                        wordEdit.toggle()
+                    }
+                    .sheet(isPresented: $wordEdit) {
+                        EditWordView(word: $word)
+                    }
         }
-        .toolbar {
-            Image(systemName: "trash")
-                .onTapGesture {
-                    alertAction.toggle()
-                }
-                .alert(isPresented: $alertAction, content: {
-                    Alert(title: Text("\(word.alphabet)를 삭제하시겠습니까?"), primaryButton: .cancel(Text("취소")), secondaryButton: .destructive(Text("삭제"), action: {
-                        Task {
-                            await viewModel.removeWord(word: word)
-                            dismiss()
-                        }
-                    }))
-                })
-            Image(systemName: "square.and.pencil")
-                .onTapGesture {
-                    wordEdit.toggle()
-                }
-                .sheet(isPresented: $wordEdit) {
-                    EditWordView(word: $word)
-                }
         }
     }
 }

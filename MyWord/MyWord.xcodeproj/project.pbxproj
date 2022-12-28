@@ -19,6 +19,8 @@
 		DF0C2E4D295ABCC5004B3F09 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E4C295ABCC5004B3F09 /* DataManager.swift */; };
 		DF0C2E51295ACA85004B3F09 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E50295ACA85004B3F09 /* Color+Extension.swift */; };
 		DF0C2E53295AE9DF004B3F09 /* EditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E52295AE9DF004B3F09 /* EditWordView.swift */; };
+		DF0C2E55295C0C9A004B3F09 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0C2E54295C0C9A004B3F09 /* Launch Screen.storyboard */; };
+		DF0C2E5A295C125A004B3F09 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E59295C125A004B3F09 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		DF0C2E4C295ABCC5004B3F09 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		DF0C2E50295ACA85004B3F09 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		DF0C2E52295AE9DF004B3F09 /* EditWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWordView.swift; sourceTree = "<group>"; };
+		DF0C2E54295C0C9A004B3F09 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DF0C2E59295C125A004B3F09 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				DF0C2E2F295AADB1004B3F09 /* MyWordApp.swift */,
 				DF0C2E33295AADB3004B3F09 /* Assets.xcassets */,
 				DF0C2E35295AADB3004B3F09 /* Preview Content */,
+				DF0C2E54295C0C9A004B3F09 /* Launch Screen.storyboard */,
 			);
 			path = MyWord;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 				DF0C2E48295AB1B2004B3F09 /* WordDetailView.swift */,
 				DF0C2E4A295AB81A004B3F09 /* AddWordView.swift */,
 				DF0C2E52295AE9DF004B3F09 /* EditWordView.swift */,
+				DF0C2E59295C125A004B3F09 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0C2E55295C0C9A004B3F09 /* Launch Screen.storyboard in Resources */,
 				DF0C2E37295AADB3004B3F09 /* Preview Assets.xcassets in Resources */,
 				DF0C2E34295AADB3004B3F09 /* Assets.xcassets in Resources */,
 			);
@@ -202,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0C2E45295AAE32004B3F09 /* WordViewModel.swift in Sources */,
+				DF0C2E5A295C125A004B3F09 /* TestView.swift in Sources */,
 				DF0C2E51295ACA85004B3F09 /* Color+Extension.swift in Sources */,
 				DF0C2E4D295ABCC5004B3F09 /* DataManager.swift in Sources */,
 				DF0C2E41295AAE0D004B3F09 /* Word.swift in Sources */,
@@ -342,9 +350,11 @@
 				DEVELOPMENT_TEAM = DF85MB57QP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWord/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -371,9 +381,11 @@
 				DEVELOPMENT_TEAM = DF85MB57QP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWord/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

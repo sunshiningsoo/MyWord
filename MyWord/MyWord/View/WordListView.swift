@@ -10,40 +10,57 @@ import SwiftUI
 struct WordListView: View {
     @StateObject private var viewModel: WordViewModel = WordViewModel()
     @State private var wordPlus: Bool = false
+    @State private var test: Bool = false
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    if viewModel.words.isEmpty {
-                        Button {
-                            wordPlus.toggle()
-                        } label: {
-                            Text("나만의 단어를 추가해 보세요!")
-                        }
-                        .frame(width: UIScreen.main.bounds.width - 40, height: 100)
-                        .foregroundColor(.white)
-                        .background(Color(.systemOrange))
-                        .cornerRadius(20)
-                        .offset(y: 100)
-                        Spacer()
-                    } else {
-                        ForEach(viewModel.words) { word in
-                            NavigationLink {
-                                WordDetailView(word: word)
-                                    .environmentObject(viewModel)
+        ZStack{
+            NavigationView {
+                ScrollView {
+                    
+                    VStack {
+                        if viewModel.words.isEmpty {
+                            Button {
+                                wordPlus.toggle()
                             } label: {
-                                WordCardView(word: word)
+                                Text("첫번째 단어를 추가해 보세요!")
+                                    .font(.title3)
+                                    .bold()
+                            }
+                            .frame(width: UIScreen.main.bounds.width - 40, height: 100)
+                            .foregroundColor(.white)
+                            .background(Color(.systemOrange))
+                            .cornerRadius(20)
+                            .offset(y: 100)
+                            .shadow(radius: 3)
+                            Spacer()
+                        } else {
+                            ForEach(viewModel.words) { word in
+                                NavigationLink {
+                                    WordDetailView(word: word)
+                                        .environmentObject(viewModel)
+                                } label: {
+                                    WordCardView(word: word)
+                                }
                             }
                         }
                     }
+                    .navigationTitle("My Word")
+                    .toolbar {
+                        Image(systemName: "plus")
+                            .onTapGesture {
+                                wordPlus.toggle()
+                            }
+                    }
                 }
-                .navigationTitle("My Word")
-                .toolbar {
-                    Image(systemName: "plus")
-                        .onTapGesture {
-                            wordPlus.toggle()
-                        }
+            }
+            
+            VStack {
+                Spacer()
+                Button("단어 테스트") {
+                    test.toggle()
+                }
+                .fullScreenCover(isPresented: $test) {
+                    TestView()
                 }
             }
         }
