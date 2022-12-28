@@ -57,4 +57,18 @@ class WordViewModel: ObservableObject {
         })
     }
     
+    func returnTwoWords() async -> [Word] {
+        await MainActor.run(body: {
+            var temp: [Word] = []
+            let testWord = words.randomElement()!
+            var fakeWord = words.randomElement()!
+            while fakeWord == testWord {
+                fakeWord = words.randomElement()!
+            }
+            temp.append(fakeWord)
+            temp.append(testWord)
+            return temp
+        })
+    }
+    
 }

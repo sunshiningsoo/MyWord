@@ -11,13 +11,20 @@ struct WordCardView: View {
     @State var meaningShow: Bool = false
     var word: Word
     var body: some View {
+        ZStack {
+            Rectangle()
+                .frame(width: UIScreen.main.bounds.width - 40, height: 100)
+                .foregroundColor(Color(.systemOrange))
+                .opacity(0.8)
+                .cornerRadius(20)
+                .shadow(radius: 3)
             HStack {
                 Text(word.alphabet)
                     .font(.title)
                     .foregroundColor(.black)
                     .bold()
                 Spacer()
-                Text(meaningShow ? word.meaning : "뜻 확인하기")
+                Text(meaningShow ? word.meaning : "클릭")
                     .font(.title3)
                     .foregroundColor(.white)
                     .onTapGesture {
@@ -25,11 +32,9 @@ struct WordCardView: View {
                     }
             }
             .padding()
-        .frame(width: UIScreen.main.bounds.width - 40, height: 100)
-        .background(Color(.systemOrange))
-        .cornerRadius(20)
-        .padding()
-        .shadow(radius: 3)
+            .frame(width: UIScreen.main.bounds.width - 40, height: 100)
+            .padding()
+        }
     }
 }
 
