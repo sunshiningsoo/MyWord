@@ -18,10 +18,6 @@ struct TestView: View {
     @State var fakeWord: Word?
     let randomSeed: Int = Int.random(in: 0...1) % 2
     
-    enum Size {
-        static let screenWidth = UIScreen.main.bounds.width
-    }
-    
     var body: some View {
         ZStack {
             Color(.systemGray5)
@@ -29,7 +25,7 @@ struct TestView: View {
             VStack (spacing: 20) {
                 ZStack {
                     Rectangle()
-                        .frame(width: Size.screenWidth * 0.8, height: Size.screenWidth * 0.8)
+                        .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenWidth * 0.8)
                         .cornerRadius(10)
                         .foregroundColor(Color(.systemGray4))
                         .opacity(0.4)
@@ -44,7 +40,7 @@ struct TestView: View {
                 } label: {
                     ZStack {
                         Rectangle()
-                            .frame(width: Size.screenWidth * 0.8, height: Size.screenWidth * 0.2)
+                            .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenWidth * 0.2)
                             .foregroundColor(.orange)
                             .opacity(0.8)
                             .cornerRadius(20)
@@ -73,7 +69,7 @@ struct TestView: View {
                 } label: {
                     ZStack {
                         Rectangle()
-                            .frame(width: Size.screenWidth * 0.8, height: Size.screenWidth * 0.2)
+                            .frame(width: UIScreen.screenWidth * 0.8, height: UIScreen.screenWidth * 0.2)
                         .foregroundColor(.orange)
                         .opacity(0.8)
                         .cornerRadius(20)

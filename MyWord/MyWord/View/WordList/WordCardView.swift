@@ -10,13 +10,15 @@ import SwiftUI
 struct WordCardView: View {
     @State var meaningShow: Bool = false
     var word: Word
+    
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(width: UIScreen.main.bounds.width - 40, height: 100)
+                .frame(height: 100)
                 .foregroundColor(Color(.systemOrange))
                 .cornerRadius(20)
                 .shadow(radius: 3)
+                .padding()
             HStack {
                 Text(word.alphabet)
                     .font(.title)
@@ -30,8 +32,7 @@ struct WordCardView: View {
                     }
             }
             .padding()
-            .frame(width: UIScreen.main.bounds.width - 40, height: 100)
-            .padding()
+            .frame(width: UIScreen.screenWidth - 40, height: 100)
         }
     }
 }

@@ -9,16 +9,6 @@ import SwiftUI
 
 extension Color {
     
-    enum color {
-        case mainBackground
-        case accentGreen
-        
-    }
     
 }
 
-extension CGFloat {
-    func screenWidth() -> CGFloat {
-        return UIScreen.main.bounds.width
-    }
-}

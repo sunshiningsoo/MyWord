@@ -23,7 +23,7 @@ class WordViewModel: ObservableObject {
         loadData()
     }
     
-    func loadData() {
+    private func loadData() {
         Task {
             let temp = await manager.loadData()
             await MainActor.run(body: {

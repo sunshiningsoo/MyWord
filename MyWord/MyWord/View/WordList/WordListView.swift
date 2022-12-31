@@ -27,7 +27,8 @@ struct WordListView: View {
                                     .font(.title3)
                                     .bold()
                             }
-                            .frame(width: UIScreen.main.bounds.width - 40, height: 100)
+                            .frame(height: 100)
+                            .padding()
                             .foregroundColor(.white)
                             .background(Color(.systemOrange))
                             .cornerRadius(20)

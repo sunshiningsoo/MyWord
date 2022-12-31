@@ -13,7 +13,6 @@ struct EditWordView: View {
     @Binding var word: Word
     
     enum Size {
-        static let screenWidth = UIScreen.main.bounds.width
         static let padding: CGFloat = 20
     }
     
@@ -26,7 +25,7 @@ struct EditWordView: View {
                 }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                 TextField("단어를 입력하세요", text: $word.alphabet)
                     .padding()
-                    .frame(width: Size.screenWidth - Size.padding * 2, height: 50)
+                    .frame(width: UIScreen.screenWidth - Size.padding * 2, height: 50)
                     .background(Color(.systemGray5))
                     .cornerRadius(10)
             }.padding(EdgeInsets(top: 0, leading: Size.padding, bottom: 10, trailing: Size.padding))
@@ -38,7 +37,7 @@ struct EditWordView: View {
                 }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                 TextField("단어의 의미는?", text: $word.meaning)
                     .padding()
-                    .frame(width: Size.screenWidth - Size.padding * 2, height: 50)
+                    .frame(width: UIScreen.screenWidth - Size.padding * 2, height: 50)
                     .background(Color(.systemGray5))
                     .cornerRadius(10)
             }.padding(EdgeInsets(top: 0, leading: Size.padding, bottom: 10, trailing: Size.padding))
@@ -50,7 +49,7 @@ struct EditWordView: View {
                 }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                 TextField("예시 문장", text: $word.example)
                     .padding()
-                    .frame(width: Size.screenWidth - Size.padding * 2, height: 50)
+                    .frame(width: UIScreen.screenWidth - Size.padding * 2, height: 50)
                     .background(Color(.systemGray5))
                     .cornerRadius(10)
             }.padding(EdgeInsets(top: 0, leading: Size.padding, bottom: 10, trailing: Size.padding))
@@ -62,7 +61,7 @@ struct EditWordView: View {
                 }
             } label: {
                 Text("저장하기")
-                    .frame(width: Size.screenWidth - Size.padding * 2, height: 50)
+                    .frame(width: UIScreen.screenWidth - Size.padding * 2, height: 50)
                     .background(Color(.systemOrange))
                     .foregroundColor(.white)
                     .cornerRadius(10)
