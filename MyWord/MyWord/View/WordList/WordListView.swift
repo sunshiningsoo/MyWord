@@ -10,7 +10,6 @@ import SwiftUI
 struct WordListView: View {
     @EnvironmentObject var viewModel: WordViewModel
     @State private var wordPlus: Bool = false
-
     
     var body: some View {
         NavigationView {

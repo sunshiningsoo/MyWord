@@ -10,7 +10,6 @@ import SwiftUI
 struct TestView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: WordViewModel
-    
     @State private var upAnswerPick: Bool = false
     @State private var downAnswerPick: Bool = false
     @State var pickNum = 0
@@ -118,7 +117,7 @@ struct TestView: View {
         }
         .task {
             let array = await viewModel.returnTwoWords()
-            if array.count == 2 {
+            if !array.isEmpty {
                 word = array.first!
                 fakeWord = array[1]
             }
