@@ -16,18 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startIcon" translatesAutoresizingMaskIntoConstraints="NO" id="802-fq-PO3">
-                                <rect key="frame" x="95" y="278.66666666666669" width="200" height="300.00000000000006"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchScreenWord" translatesAutoresizingMaskIntoConstraints="NO" id="1rY-t9-gIj">
+                                <rect key="frame" x="75" y="358" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="ugk-ji-DiX"/>
+                                    <constraint firstAttribute="width" constant="300" id="w3e-IK-LGW"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="0.74509803921568629" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="802-fq-PO3" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="2Xm-hb-bDG"/>
-                            <constraint firstItem="802-fq-PO3" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="Vth-xR-Jc7"/>
+                            <constraint firstItem="1rY-t9-gIj" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="3ji-Rh-v0u"/>
+                            <constraint firstItem="1rY-t9-gIj" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="DSJ-EJ-lL8"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="startIcon" width="456" height="300"/>
+        <image name="launchScreenWord" width="1989" height="1242"/>
     </resources>
 </document>
