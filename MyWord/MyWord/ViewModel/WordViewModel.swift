@@ -25,10 +25,14 @@ class WordViewModel: ObservableObject {
     
     private func loadData() {
         Task {
-            let temp = await manager.loadData()
-            await MainActor.run(body: {
-                self.words = temp
-            })
+            do {
+                let temp = try await manager.loadData()
+                await MainActor.run(body: {
+                    self.words = temp
+                })
+            } catch {
+                print("WordViewModel loadData: \(error.localizedDescription)")
+            }
         }
     }
     

@@ -16,15 +16,14 @@ actor DataManager {
         return path[0]
     }
     
-    func loadData() -> [Word] {
+    func loadData() throws -> [Word] {
         do {
             let url = getDocumentDirectory().appendingPathComponent("Words")
             let data = try Data(contentsOf: url)
             let words = try JSONDecoder().decode([Word].self, from: data)
             return words
         } catch {
-            print(error.localizedDescription)
-            return []
+            throw error
         }
     }
     
