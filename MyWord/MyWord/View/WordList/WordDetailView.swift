@@ -17,7 +17,7 @@ struct WordDetailView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemGray5)
+            Color(.basicBackground)
                 .ignoresSafeArea()
             ScrollView {
                 VStack (spacing: 30) {
@@ -41,7 +41,7 @@ struct WordDetailView: View {
                         Spacer()
                     }.padding()
                     
-                    if word.example == "" {
+                    if word.example.isEmpty {
                         HStack {
                             Text("예시 문장이 없습니다. \n예시 문장을 만들어 보세요!")
                                 .font(.body)

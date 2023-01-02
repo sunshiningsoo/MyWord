@@ -14,17 +14,17 @@ struct WordListView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(.systemGray5)
+                Color(.basicBackground)
                     .ignoresSafeArea()
                 ScrollView {
-                    VStack {
+                    VStack (alignment: .center) {
                         if viewModel.words.isEmpty {
                             Button {
                                 wordPlus.toggle()
                             } label: {
                                 Text("첫번째 단어를 추가해 보세요!")
                                     .font(.title3)
-                                    .bold()
+                                    .fontWeight(.bold)
                             }
                             .frame(height: 100)
                             .padding()
@@ -33,6 +33,8 @@ struct WordListView: View {
                             .cornerRadius(20)
                             .offset(y: 100)
                             .shadow(radius: 3)
+                            Text("헷갈리는 단어를 예제와 함께 추가해\n내 것으로 만들어요")
+                                .offset(y: 140)
                             Spacer()
                         } else {
                             ForEach(viewModel.words) { word in

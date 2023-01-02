@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-extension Color {
-    
+extension UIColor {
+    static let basicBackground = UIColor.systemGray5
     
 }
 

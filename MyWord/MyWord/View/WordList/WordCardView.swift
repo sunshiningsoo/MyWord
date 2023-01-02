@@ -24,7 +24,7 @@ struct WordCardView: View {
                     .font(.title)
                     .accentColor(Color(.systemBackground))
                 Spacer()
-                Text(meaningShow ? word.meaning : "클릭")
+                Text(meaningShow ? word.meaning : "뜻 보기")
                     .font(.title3)
                     .foregroundColor(Color(.systemBackground))
                     .onTapGesture {

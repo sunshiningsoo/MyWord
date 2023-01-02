@@ -38,7 +38,7 @@ struct TestHomeView: View {
                                     Image(systemName: "bell")
                                         .resizable()
                                         .frame(width: 60, height: 60)
-                                    Text("한개\n테스트")
+                                    Text("단어 한개")
                                         .font(.headline)
                                 }.padding()
                             }
