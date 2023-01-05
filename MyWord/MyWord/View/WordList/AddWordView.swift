@@ -36,7 +36,7 @@ struct AddWordView: View {
             
             VStack {
                 HStack {
-                    Text("단어의미")
+                    Text("단어 의미")
                     Spacer()
                 }
                 .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
