@@ -47,7 +47,7 @@ struct TestHomeView: View {
                             Alert(title: Text("나만의 단어를 추가해 보세요😀"), message: Text("2개 이상의 단어로 테스트를 진행할 수 있습니다."), dismissButton: .default(Text("닫기")))
                         })
                         .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .cornerRadius(20)
                         .fullScreenCover(isPresented: $test) {
                             TestView()
                                 .environmentObject(viewModel)
