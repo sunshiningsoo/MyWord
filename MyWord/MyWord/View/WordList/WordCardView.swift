@@ -20,9 +20,16 @@ struct WordCardView: View {
                 .shadow(radius: 3)
                 .padding()
             HStack {
-                Text(word.alphabet)
-                    .font(.title)
-                    .accentColor(Color(.systemBackground))
+                VStack (alignment: .leading) {
+                    Text(word.alphabet)
+                        .font(.title)
+                        .fontWeight(.bold)
+                    if !word.example.isEmpty {
+                        Text(word.example)
+                            .font(.subheadline)
+                            .fontWeight(.regular)
+                    }
+                }.accentColor(Color(.systemBackground))
                 Spacer()
                 Text(meaningShow ? word.meaning : "뜻 보기")
                     .font(.title3)

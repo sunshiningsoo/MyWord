@@ -67,5 +67,6 @@ struct WordListView: View {
 struct WordListView_Previews: PreviewProvider {
     static var previews: some View {
         WordListView()
+            .environmentObject(WordViewModel())
     }
 }
