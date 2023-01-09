@@ -17,7 +17,7 @@ struct WordListView: View {
                 Color(.basicBackground)
                     .ignoresSafeArea()
                 ScrollView {
-                    VStack (alignment: .center) {
+                    VStack (alignment: .center, spacing: -10) {
                         if viewModel.words.isEmpty {
                             Button {
                                 wordPlus.toggle()
