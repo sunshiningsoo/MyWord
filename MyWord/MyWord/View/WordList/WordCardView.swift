@@ -26,7 +26,7 @@ struct WordCardView: View {
                     Text(word.meaning)
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(.systemBackground))
+                        .foregroundColor(.black)
                         .onTapGesture {
                             meaningShow.toggle()
                             withAnimation(.linear(duration: 0.2)) {
@@ -55,12 +55,14 @@ struct WordCardView: View {
                         Text(word.alphabet)
                             .font(.title)
                             .fontWeight(.bold)
+                            .foregroundColor(.black)
                         if !word.example.isEmpty {
                             Text(word.example)
                                 .font(.subheadline)
                                 .fontWeight(.regular)
+                                .foregroundColor(.black)
                         }
-                    }.accentColor(Color(.systemBackground))
+                    }
                     Spacer()
                     Text("뜻 보기")
                         .rotation3DEffect(frontAngle, axis: (x: 1, y: 0, z: 0))
