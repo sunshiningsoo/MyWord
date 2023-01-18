@@ -20,11 +20,12 @@
 		DF0C2E51295ACA85004B3F09 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E50295ACA85004B3F09 /* Color+Extension.swift */; };
 		DF0C2E53295AE9DF004B3F09 /* EditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E52295AE9DF004B3F09 /* EditWordView.swift */; };
 		DF0C2E55295C0C9A004B3F09 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0C2E54295C0C9A004B3F09 /* Launch Screen.storyboard */; };
-		DF0C2E5A295C125A004B3F09 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E59295C125A004B3F09 /* TestView.swift */; };
+		DF0C2E5A295C125A004B3F09 /* OneWordTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E59295C125A004B3F09 /* OneWordTestView.swift */; };
 		DF0C2E5C295C199F004B3F09 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C2E5B295C199F004B3F09 /* TestViewModel.swift */; };
 		DF4E7031295C9FBB00616289 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E7030295C9FBB00616289 /* MainTabView.swift */; };
 		DF4E7033295CA02100616289 /* TestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E7032295CA02100616289 /* TestHomeView.swift */; };
 		DF4E703829601CA100616289 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E703729601CA100616289 /* UIScreen+Extension.swift */; };
+		DFDE501B2977C47C00E515E8 /* ManyWordTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDE501A2977C47C00E515E8 /* ManyWordTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,11 +43,12 @@
 		DF0C2E50295ACA85004B3F09 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		DF0C2E52295AE9DF004B3F09 /* EditWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWordView.swift; sourceTree = "<group>"; };
 		DF0C2E54295C0C9A004B3F09 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		DF0C2E59295C125A004B3F09 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		DF0C2E59295C125A004B3F09 /* OneWordTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneWordTestView.swift; sourceTree = "<group>"; };
 		DF0C2E5B295C199F004B3F09 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		DF4E7030295C9FBB00616289 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		DF4E7032295CA02100616289 /* TestHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeView.swift; sourceTree = "<group>"; };
 		DF4E703729601CA100616289 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		DFDE501A2977C47C00E515E8 /* ManyWordTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManyWordTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				DF4E7032295CA02100616289 /* TestHomeView.swift */,
-				DF0C2E59295C125A004B3F09 /* TestView.swift */,
+				DF0C2E59295C125A004B3F09 /* OneWordTestView.swift */,
+				DFDE501A2977C47C00E515E8 /* ManyWordTestView.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0C2E45295AAE32004B3F09 /* WordViewModel.swift in Sources */,
-				DF0C2E5A295C125A004B3F09 /* TestView.swift in Sources */,
+				DF0C2E5A295C125A004B3F09 /* OneWordTestView.swift in Sources */,
 				DF0C2E51295ACA85004B3F09 /* Color+Extension.swift in Sources */,
 				DF0C2E4D295ABCC5004B3F09 /* DataManager.swift in Sources */,
 				DF0C2E41295AAE0D004B3F09 /* Word.swift in Sources */,
@@ -257,6 +260,7 @@
 				DF0C2E30295AADB1004B3F09 /* MyWordApp.swift in Sources */,
 				DF4E703829601CA100616289 /* UIScreen+Extension.swift in Sources */,
 				DF0C2E4B295AB81A004B3F09 /* AddWordView.swift in Sources */,
+				DFDE501B2977C47C00E515E8 /* ManyWordTestView.swift in Sources */,
 				DF0C2E53295AE9DF004B3F09 /* EditWordView.swift in Sources */,
 				DF0C2E47295AB1AB004B3F09 /* WordCardView.swift in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TestView: View {
+struct OneWordTestView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: WordViewModel
     @State private var upAnswerPick: Bool = false
@@ -19,7 +19,7 @@ struct TestView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemGray5)
+            Color(.basicBackground)
                 .ignoresSafeArea()
             VStack (spacing: 20) {
                 ZStack {
@@ -34,6 +34,7 @@ struct TestView: View {
                 }
                 
                 Button {
+                    // 위 버튼을 누르게 되었을때
                     pickNum = 0
                     upAnswerPick.toggle()
                 } label: {
@@ -51,18 +52,11 @@ struct TestView: View {
                     }
                 }
                 .alert(isPresented: $upAnswerPick, content: {
-                    if pickNum == 0 && randomSeed == 0 {
-                        return Alert(title: Text("정답입니다🧡"), dismissButton: .default(Text("확인"), action: {
-                            dismiss()
-                        }))
-                    } else if pickNum == 0 && randomSeed == 1 {
-                        return Alert(title: Text("틀렸습니다❌"), message: Text("다시 골라보세요!"), dismissButton: .default(Text("확인")))
-                    } else {
-                        return Alert(title: Text("ERR"))
-                    }
+                    answerAlert(0)
                 })
                 
                 Button {
+                    // 아래 버튼을 눌렀을때
                     pickNum = 1
                     downAnswerPick.toggle()
                 } label: {
@@ -80,15 +74,7 @@ struct TestView: View {
                     }
                 }
                 .alert(isPresented: $downAnswerPick, content: {
-                    if pickNum == 1 && randomSeed == 1 {
-                        return Alert(title: Text("정답입니다🧡"), dismissButton: .default(Text("확인"), action: {
-                            dismiss()
-                        }))
-                    } else if pickNum == 1 && randomSeed == 0 {
-                        return Alert(title: Text("틀렸습니다❌"), message: Text("다시 골라보세요!"), dismissButton: .default(Text("확인")))
-                    } else {
-                        return Alert(title: Text("ERR"))
-                    }
+                    answerAlert(1)
                 })
             }
             
@@ -123,11 +109,16 @@ struct TestView: View {
             }
         }
     }
+    
+    private func answerAlert(_ pickNum: Int) -> Alert {
+        if pickNum == pickNum && randomSeed == pickNum {
+            return Alert(title: Text("정답입니다🧡"), dismissButton: .default(Text("확인"), action: {
+                dismiss()
+            }))
+        } else if pickNum == pickNum && randomSeed == (pickNum == 0 ? 1 : 0) {
+            return Alert(title: Text("틀렸습니다❌"), message: Text("다시 골라보세요!"), dismissButton: .default(Text("확인")))
+        } else {
+            return Alert(title: Text("ERR"))
+        }
+    }
 }
-
-//struct TestView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TestView()
-//            .environmentObject(WordViewModel())
-//    }
-//}
