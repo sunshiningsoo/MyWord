@@ -71,10 +71,3 @@ struct EditWordView: View {
         .offset(y: 60)
     }
 }
-
-//struct EditWordView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditWordView(word: Word(alphabet: "HEllo", meaning: "안녕하세요,", example: "This is Example"))
-//            .environmentObject(WordViewModel())
-//    }
-//}
